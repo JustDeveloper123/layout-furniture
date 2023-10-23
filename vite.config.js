@@ -3,22 +3,24 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import injectHTML from 'vite-plugin-html-inject';
 
+const base = 'layout-furniture';
+
 export default defineConfig({
   //# Deployment
-  base: '/layout-furniture/', // repo name
+  // base: `/${base}/`, // repo name
 
-  //# Плагіни
+  //# Plugins
   plugins: [
     injectHTML({
       debug: {
         logPath: true, //% Debugging
       },
-    }), // Опції по бажанню
+    }), // Optional options
   ],
 
   css: {
     postcss: {
-      plugins: [autoprefixer()], // Опції по бажанню
+      plugins: [autoprefixer()], // Optional options
     },
   },
 
@@ -26,17 +28,18 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        // Шляхи, які потрібно компілювати в Production
+        // Production paths
         main: resolve(__dirname, 'index.html'),
-        404: resolve(__dirname, '404/index.html'),
+        404: resolve(__dirname, `./404/index.html`),
       },
     },
   },
 
-  //# Локальні порти
+  //# Local server
   server: {
     port: 3000,
   },
+  //# Preview server
   preview: {
     port: 8080,
   },
