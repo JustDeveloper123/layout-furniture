@@ -7,7 +7,7 @@ const base = 'layout-furniture';
 
 export default defineConfig({
   //# Deployment
-  // base: `/${base}/`, // repo name
+  base: `/${base}/`, // repo name
 
   //# Plugins
   plugins: [
