@@ -7,7 +7,7 @@ const base = 'layout-furniture';
 
 export default defineConfig({
   //# Deployment
-  // base: `/${base}/`, // repo name
+  base: `/${base}/`, // repo name
 
   //# Plugins
   plugins: [
@@ -29,8 +29,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         // Production paths
-        main: resolve(__dirname, 'index.html'),
-        404: resolve(__dirname, `404/index.html`),
+        main: resolve(__dirname, '/index.html'),
+        404: resolve(__dirname, `/404/index.html`),
       },
     },
   },
