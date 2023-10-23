@@ -29,8 +29,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         // Production paths
-        main: resolve(__dirname, 'index.html'),
-        404: resolve(__dirname, `./404/index.html`),
+        main: resolve(__dirname, 'layout-furniture/index.html'),
+        404: resolve(__dirname, `layout-furniture/404/index.html`),
       },
     },
   },
